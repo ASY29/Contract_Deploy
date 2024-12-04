@@ -52,8 +52,8 @@ input_required_details() {
         rm "$SCRIPT_DIR/token_deployment/.env"
     fi
 
-    read -p "Enter your Private Key: " PRIVATE_KEY
-    read -p "Enter the token name (e.g., Asy Token): " TOKEN_NAME
+    read -s -p "Enter your Private Key: " PRIVATE_KEY
+    read -p "Enter the token name (e.g., My Token): " TOKEN_NAME
     read -p "Enter the token symbol (e.g., ASY): " TOKEN_SYMBOL
     read -p "Enter the network rpc url: " RPC_URL
 
