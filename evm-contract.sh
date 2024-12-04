@@ -109,7 +109,8 @@ EOL
     show "Deploying ERC20 Token Contract $contract_number..." "progress"
     DEPLOY_OUTPUT=$(forge create "$SCRIPT_DIR/src/ZunXBT.sol:ZunXBT" \
         --rpc-url rpc_url \
-        --private-key "$PRIVATE_KEY")
+        --private-key "$PRIVATE_KEY" \
+        --broadcast)
 
     if [[ $? -ne 0 ]]; then
         show "Deployment of contract $contract_number failed." "error"
