@@ -1,6 +1,6 @@
 #!/bin/bash
 
-curl -s https://github.com/ASY29/silviuasy/blob/main/logo.sh | bash
+curl -s https://raw.githubusercontent.com/ASY29/silviuasy/main/logo.sh | bash
 sleep 3
 
 BOLD=$(tput bold)
