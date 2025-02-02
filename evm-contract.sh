@@ -54,7 +54,7 @@ input_required_details() {
 
     read -p "Enter your Private Key: " PRIVATE_KEY
     read -p "Enter the token name (e.g., My Token): " TOKEN_NAME
-    read -p "Enter the token symbol (e.g., ASY): " TOKEN_SYMBOL
+    read -p "Enter the token symbol (e.g., MTK): " TOKEN_SYMBOL
     read -p "Enter the network rpc url: " RPC_URL
 
     mkdir -p "$SCRIPT_DIR/token_deployment"
@@ -85,13 +85,13 @@ deploy_contract() {
 
     mkdir -p "$SCRIPT_DIR/src"
 
-    cat <<EOL > "$SCRIPT_DIR/src/ZunXBT.sol"
+    cat <<EOL > "$SCRIPT_DIR/src/SilviuASY.sol"
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.20;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract ZunXBT is ERC20 {
+contract SilviuASY is ERC20 {
     constructor() ERC20("$TOKEN_NAME", "$TOKEN_SYMBOL") {
         _mint(msg.sender, 100000 * (10 ** decimals()));
     }
@@ -107,7 +107,7 @@ EOL
     fi
 
     show "Deploying ERC20 Token Contract $contract_number..." "progress"
-    DEPLOY_OUTPUT=$(forge create "$SCRIPT_DIR/src/ZunXBT.sol:ZunXBT" \
+    DEPLOY_OUTPUT=$(forge create "$SCRIPT_DIR/src/ZunXBT.sol:SilviuASY" \
         --rpc-url rpc_url \
         --private-key "$PRIVATE_KEY" \
         --broadcast)
