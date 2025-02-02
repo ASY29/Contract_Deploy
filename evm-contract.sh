@@ -107,7 +107,7 @@ EOL
     fi
 
     show "Deploying ERC20 Token Contract $contract_number..." "progress"
-    DEPLOY_OUTPUT=$(forge create "$SCRIPT_DIR/src/ZunXBT.sol:SilviuASY" \
+    DEPLOY_OUTPUT=$(forge create "$SCRIPT_DIR/src/SilviuASY.sol:SilviuASY" \
         --rpc-url rpc_url \
         --private-key "$PRIVATE_KEY" \
         --broadcast)
